@@ -18,7 +18,6 @@ import {
 
 import Instabug, { BugReporting, FeatureRequests, Surveys, Chats, CrashReporting, Replies } from'instabug-reactnative';
 
-
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
     'Cmd+D or shake for dev menu',
@@ -35,18 +34,18 @@ export default class App extends Component<{}> {
       colorTheme: 'Light'
     };
 
-    Instabug.startWithToken("YOUR_TOKEN", [Instabug.invocationEvent.floatingButton]);
+    Instabug.startWithToken('YOUR_TOKEN', [Instabug.invocationEvent.shake, Instabug.invocationEvent.floatingButton]);
   }
 
   render() {
     return (
-      <View testID='welcome' style={styles.container}>
+      <View testID="appMainView" style={styles.container}>
         <ScrollView contentContainerStyle={styles.contentContainer} >
           <Text style={styles.details}>
             Hello {"Instabug's"} awesome user! The purpose of this application is to show you the different
             options for customizing the SDK and how easy it is to integrate it to your existing app
           </Text>
-          <TouchableOpacity style={styles.button} onPress={()=>this.invoke()}>
+          <TouchableOpacity testID="invokeBtn" style={styles.button} onPress={()=>this.invoke()}>
             <Text style={styles.text}> INVOKE </Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.button} onPress={()=>this.sendBugReport()}>
@@ -106,7 +105,7 @@ export default class App extends Component<{}> {
             <TouchableOpacity style={styles.buttonColor} onPress={()=>this.changeInvocationEvent('twoFingersSwipe')}>
               <Text style={styles.textInvoke}> TWO FINGERS SWIPE LEFT</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.buttonColor} onPress={()=>this.changeInvocationEvent('Button')}>
+            <TouchableOpacity testID="enableFloatingBtnVisibilityBtn" style={styles.buttonColor} onPress={()=>this.changeInvocationEvent('Button')}>
               <Text style={styles.textInvoke}> FLOATING BUTTON </Text>
             </TouchableOpacity>       
             <TouchableOpacity style={styles.buttonColor} onPress={()=>this.changeInvocationEvent('None')}>
