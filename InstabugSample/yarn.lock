@@ -2756,8 +2756,10 @@ inquirer@^6.4.1:
     strip-ansi "^5.1.0"
     through "^2.3.6"
 
-instabug-reactnative@../:
-  version "9.1.7"
+instabug-reactnative@9.1.9:
+  version "9.1.9"
+  resolved "https://registry.yarnpkg.com/instabug-reactnative/-/instabug-reactnative-9.1.9.tgz#34ddb6ba358b70f3e54e95a5e1f14ccffe71d223"
+  integrity sha512-GN9jYTUsK2ErOkj9KSvvn3lURDHYSUj9i8eLAwYn8l24jMcJO0d+HqOfCtuqJvj86P9M1/Oo7XbP0GqHEPBBkg==
 
 invariant@^2.2.4:
   version "2.2.4"
